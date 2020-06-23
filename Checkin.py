@@ -31,8 +31,8 @@ def main():
 
     s.post(login_url, headers=header, params=params)
     result = s.post(check_in, headers=header)
-    msg = result.text.replace("\"", "\'").encode('utf-8').decode()
-    send_email(msg)
+    msg = result.text.replace("\"", "\'")
+    send_email(msg.encode('utf-8').decode())
 
 
 def send_email(contents):
@@ -44,6 +44,3 @@ def send_email(contents):
 
 if __name__ == "__main__":
     main()
-
-# https://touhou.plus/user/checkin
-# https://touhou.plus/auth/login
