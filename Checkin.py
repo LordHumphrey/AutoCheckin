@@ -8,6 +8,7 @@ login_url = os.environ["LOGIN"]
 check_in = os.environ["CHECKIN"]
 email = os.environ["EMAIL"]
 email_password = os.environ["EMAILPASSWORD"]
+target_email = os.environ["TARGETEMAIL"]
 
 
 def main():
@@ -30,7 +31,7 @@ def main():
 
     s.post(login_url, headers=header, params=params)
     result = s.post(check_in, headers=header)
-    send_email(result.text.encode('utf-8').decode())
+    send_email(result.text.replace("\"", "\'").encode('utf-8').decode())
 
 
 def send_email(contents):

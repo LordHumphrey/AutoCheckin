@@ -34,4 +34,5 @@ jobs:
           CHECKIN: ${{ secrets.CHECKIN }}
           EMAIL: ${{ secrets.EMAIL }}
           EMAILPASSWORD: ${{ secrets.EMAILPASSWORD }}
+          TARGETEMAIL: ${{secrets.TARGETEMAIL}}
         run: python3 Checkin.py
