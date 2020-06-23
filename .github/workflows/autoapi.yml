@@ -32,4 +32,6 @@ jobs:
           PASSWORD: ${{ secrets.PASSWORD }}
           LOGIN: ${{ secrets.LOGIN }}
           CHECKIN: ${{ secrets.CHECKIN }}
+          EMAIL: ${{ secrets.EMAIL }}
+          EMAILPASSWORD: ${{ secrets.EMAILPASSWORD }}
         run: python3 Checkin.py
