@@ -31,14 +31,15 @@ def main():
 
     s.post(login_url, headers=header, params=params)
     result = s.post(check_in, headers=header)
-    send_email(result.text.replace("\"", "\'").encode('utf-8').decode())
+    msg = result.text.replace("\"", "\'").encode('utf-8').decode()
+    send_email(msg)
 
 
 def send_email(contents):
     yag = yagmail.SMTP(user=email, password=email_password, host='smtp.office365.com', port=587,
                        smtp_starttls=True, smtp_ssl=False)
 
-    yag.send('2591036017@qq.com', '每日签到', contents)
+    yag.send(target_email, '每日签到', contents)
 
 
 if __name__ == "__main__":
