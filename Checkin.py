@@ -30,7 +30,7 @@ def main():
 
     s.post(login_url, headers=header, params=params)
     result = s.post(check_in, headers=header)
-    send_email(result.text.encode('ascii').decode('unicode_escape'))
+    send_email(result.text)
 
 
 def send_email(contents):
