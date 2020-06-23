@@ -37,7 +37,7 @@ def send_email(contents):
     yag = yagmail.SMTP(user=email, password=email_password, host='smtp.office365.com', port=587,
                        smtp_starttls=True, smtp_ssl=False)
 
-    yag.send('2591036017@qq.com', '每日签到', username + login_url)
+    yag.send('2591036017@qq.com', '每日签到', contents)
 
 
 if __name__ == "__main__":
