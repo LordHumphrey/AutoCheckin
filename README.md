@@ -1,2 +1,9 @@
 # AutoCheckin
 ## 机场签到~
+## CHECKIN->签到地址
+## EMAIL->发邮件的邮箱
+## EAMILPASSWORD->邮箱密码
+## LOGIN->登陆地址
+## PASSWORD->机场密码
+## TARGETEMAIL->收邮件的地址
+## USERNAME->机场用户名
