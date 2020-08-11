@@ -1,5 +1,5 @@
 # AutoCheckin
-## 机场签到~
+## 机场签到
 ## CHECKIN->签到地址
 ## EMAIL->发邮件的邮箱
 ## EAMILPASSWORD->邮箱密码
