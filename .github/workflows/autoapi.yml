@@ -35,4 +35,5 @@ jobs:
           EMAIL: ${{ secrets.EMAIL }}
           EMAILPASSWORD: ${{ secrets.EMAILPASSWORD }}
           TARGETEMAIL: ${{secrets.TARGETEMAIL}}
+          COOKIE: ${{secrets.COOKIE}}
         run: python3 Checkin.py
