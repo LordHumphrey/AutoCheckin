@@ -3,7 +3,7 @@ import os
 import yagmail
 import json
 
-check_in = "https://flysocks.xyz/user/checkin"
+check_in = os.environ["CHECKIN"]
 cookie = os.environ["COOKIE"]
 
 email = os.environ["EMAIL"]
