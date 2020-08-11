@@ -1,11 +1,11 @@
 import requests
 import os
 import yagmail
+import json
 
-username = os.environ["USERNAME"]
-password = os.environ["PASSWORD"]
-login_url = os.environ["LOGIN"]
-check_in = os.environ["CHECKIN"]
+check_in = "https://flysocks.xyz/user/checkin"
+cookie = os.environ["COOKIE"]
+
 email = os.environ["EMAIL"]
 email_password = os.environ["EMAILPASSWORD"]
 target_email = os.environ["TARGETEMAIL"]
@@ -19,19 +19,17 @@ def main():
         'Accept-Language': 'zh-CN,zh;q=0.8,zh-TW;q=0.7,zh-HK;q=0.5,en-US;q=0.3,en;q=0.2',
         'Accept-Encoding': 'gzip, deflate',
         'X-Requested-With': 'XMLHttpRequest',
-        'Origin': login_url,
         'Connection': 'close',
-        'Referer': login_url,
         'Content-Length': '0',
-    }
-    params = {
-        "email": username,
-        "passwd": password
+        'cookie': cookie
     }
 
-    s.post(login_url, headers=header, params=params)
     result = s.post(check_in, headers=header)
-    send_email(str(result.text.replace("\"", "\'").encode('utf-8').decode())+"")
+    result_dict = json.loads(result.content)
+    email_message = ""
+    for key, value in result_dict.items():
+        email_message = email_message + str(key) + ":" + str(value) + " ; "
+    send_email(email_message)
 
 
 def send_email(contents):
