@@ -5,7 +5,6 @@ import json
 
 check_in = os.environ["CHECKIN"]
 cookie = os.environ["COOKIE"]
-
 email = os.environ["EMAIL"]
 email_password = os.environ["EMAILPASSWORD"]
 target_email = os.environ["TARGETEMAIL"]
