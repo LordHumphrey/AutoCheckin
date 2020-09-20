@@ -57,6 +57,7 @@ class CheckIn:
             self.email.email_content += "\n"
 
 
+
 if __name__ == "__main__":
     check_in_list = os.environ["CHECKIN"].split(",")
     cookie_list = os.environ["COOKIE"].split(",")
