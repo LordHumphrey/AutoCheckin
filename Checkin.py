@@ -14,7 +14,6 @@ class Email:
         self.email_content = ""
 
     def send_email(self):
-        print("send {} to {} ".format(self.email_content, self.target_email))
         yag = yagmail.SMTP(user=email, password=email_password, host='smtp.office365.com', port=587,
                            smtp_starttls=True, smtp_ssl=False)
         yag.send(self.target_email, '每日签到', self.email_content)
