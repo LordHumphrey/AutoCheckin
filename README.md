@@ -1,4 +1,4 @@
-# AutoCheckin~
+# AutoCheckin
 ## 机场签到
 ## CHECKIN->签到地址
 ## EMAIL->发邮件的邮箱
