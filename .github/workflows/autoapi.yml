@@ -8,7 +8,7 @@ on:
   pull_request:
     branches: [ master ]
   schedule:
-    - cron: '0 17 * * *'
+    - cron: '0 8 * * *'
   watch:
     types: [started]
 
@@ -36,4 +36,5 @@ jobs:
           EMAILPASSWORD: ${{ secrets.EMAILPASSWORD }}
           TARGETEMAIL: ${{secrets.TARGETEMAIL}}
           COOKIE: ${{secrets.COOKIE}}
+          TZ: Asia/Shanghai
         run: python3 Checkin.py
