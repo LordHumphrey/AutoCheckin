@@ -2,7 +2,7 @@ name: Auto Checkin
 
 on:
   release:
-    types: [published]
+    types: [ published ]
   push:
     branches: [ master ]
   pull_request:
@@ -10,7 +10,7 @@ on:
   schedule:
     - cron: '0 8 * * *'
   watch:
-    types: [started]
+    types: [ started ]
 
 jobs:
   build:
@@ -28,13 +28,11 @@ jobs:
           pip install requests yagmail
       - name: Run
         env:
-          USERNAME: ${{ secrets.USERNAME }}
+          LOGIN_URL: ${{ secrets.LOGIN_URL }}
+          ACCOUNT: ${{ secrets.ACCOUNT }}
           PASSWORD: ${{ secrets.PASSWORD }}
-          LOGIN: ${{ secrets.LOGIN }}
-          CHECKIN: ${{ secrets.CHECKIN }}
           EMAIL: ${{ secrets.EMAIL }}
           EMAILPASSWORD: ${{ secrets.EMAILPASSWORD }}
-          TARGETEMAIL: ${{secrets.TARGETEMAIL}}
-          COOKIE: ${{secrets.COOKIE}}
+          TARGETEMAIL: ${{ secrets.TARGETEMAIL }}
           TZ: Asia/Shanghai
         run: python3 Checkin.py
