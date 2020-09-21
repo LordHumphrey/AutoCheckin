@@ -60,7 +60,7 @@ class CheckIn:
             self.result_dict = json.loads(result.content)
 
         except JSONDecodeError:
-            self.email.email_content += "Cookie失效或者登陆失败"
+            self.email.email_content += "Cookie失效或者登陆失败！"
         else:
             for key, value in self.result_dict.items():
                 self.email.email_content = self.email.email_content + str(key) + ":" + str(value) + " ; "
