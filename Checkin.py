@@ -58,6 +58,7 @@ class CheckIn:
         result = self.session.post(self.checkin_url, headers=self.header)
         try:
             self.result_dict = json.loads(result.content)
+
         except JSONDecodeError:
             self.email.email_content += "Cookie失效或者登陆失败"
         else:
