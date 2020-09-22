@@ -4,9 +4,9 @@ on:
   release:
     types: [ published ]
   push:
-    branches: [ Login ]
+    branches: [ Login,master ]
   pull_request:
-    branches: [ Login ]
+    branches: [ Login,master ]
   schedule:
     - cron: '0 8 * * *'
   watch:

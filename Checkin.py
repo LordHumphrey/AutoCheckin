@@ -75,7 +75,8 @@ class WebsiteAccount:
 
 
 if __name__ == "__main__":
-    login_url_list = os.environ["LOGIN_URL"].split(",")
+    login_url_list = os.environ["LOGIN_URL"].split\
+        (",")
     account_list = os.environ["ACCOUNT"].split(",")
     password_list = os.environ["PASSWORD"].split(",")
     email = os.environ["EMAIL"]
@@ -84,9 +85,10 @@ if __name__ == "__main__":
 
     email_instance = Email(email, email_password, target_email)
 
-    for login_url, account, password in zip(login_url_list, account_list, password_list):
-        my_heck_in = CheckIn(login_url, account, password, email_instance)
-        my_heck_in.main()
-        del my_heck_in
+    # for login_url, account, password in zip(login_url_list, account_list, password_list):
+    #     my_heck_in = Ch
+    #     eckIn(login_url, account, password, email_instance)
+    #     my_heck_in.main()
+    #     del my_heck_in
 
     email_instance.send_email()
